@@ -69,17 +69,59 @@ function recvResults(results) {
             // drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS, { color: '#EEEEEE', lineWidth: 1 });  //大きくすると線が太くなる
             //関節を描画(MediaPipeのライブラリ)  コメントアウトすれば表示せずに済む
             // drawLandmarks(canvasCtx, landmarks, { color: '#EEEEEEE', lineWidth: 10, radius: 5 });
+            // 16進数の色
+            // https://www.google.com/search?q=16%E9%80%B2%E6%95%B0+%E8%89%B2&rlz=1C5CHFA_enJP947JP948&oq=16%E9%80%B2%E6%95%B0+%E8%89%B2&aqs=chrome..69i57j0i512l9.8057j0j7&sourceid=chrome&ie=UTF-8
             if (flag_forLeaveSpace == 0) {
-                drawLandmarks(canvasCtx, landmarks, { color: '#FFFFFF', lineWidth: 0.5, radius: 1 });
+                drawLandmarks(canvasCtx, landmarks, { color: '#292929', lineWidth: 0.5, radius: 1 });
                 flag_forLeaveSpace = 1;
             } else if (flag_forLeaveSpace == 1) {
-                drawLandmarks(canvasCtx, landmarks, { color: '#CCCCCC', lineWidth: 0.5, radius: 1 });
+                drawLandmarks(canvasCtx, landmarks, { color: '#292929', lineWidth: 0.5, radius: 1 });
                 flag_forLeaveSpace = 2;
             } else if (flag_forLeaveSpace == 2) {
-                drawLandmarks(canvasCtx, landmarks, { color: '#140000', lineWidth: 0.5, radius: 1 });
+                drawLandmarks(canvasCtx, landmarks, { color: '#737373', lineWidth: 1, radius: 1 });
                 flag_forLeaveSpace = 3;
             } else if (flag_forLeaveSpace == 3) {
-                drawLandmarks(canvasCtx, landmarks, { color: '#101010', lineWidth: 0.5, radius: 1 });
+                drawLandmarks(canvasCtx, landmarks, { color: '#737373', lineWidth: 1, radius: 1 });
+                flag_forLeaveSpace = 4;
+            } else if (flag_forLeaveSpace == 4) {
+                drawLandmarks(canvasCtx, landmarks, { color: '#ababab', lineWidth: 0.5, radius: 1 });
+                flag_forLeaveSpace = 5;
+            } else if (flag_forLeaveSpace == 5) {
+                drawLandmarks(canvasCtx, landmarks, { color: '#ababab', lineWidth: 0.5, radius: 1 });
+                flag_forLeaveSpace = 6;
+            } else if (flag_forLeaveSpace == 6) {
+                drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS, { color: '#1f1f1f', lineWidth: 1 });
+                drawLandmarks(canvasCtx, landmarks, { color: '#1f1f1f', lineWidth: 0.5, radius: 0.5 });
+                flag_forLeaveSpace = 7;
+            } else if (flag_forLeaveSpace == 7) {
+                drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS, { color: '#1f1f1f', lineWidth: 1 });
+                drawLandmarks(canvasCtx, landmarks, { color: '#1f1f1f', lineWidth: 0.5, radius: 0.5 });
+                flag_forLeaveSpace = 8;
+            } else if (flag_forLeaveSpace == 8) {
+                drawLandmarks(canvasCtx, landmarks, { color: '#292929', lineWidth: 0.5, radius: 1 });
+                flag_forLeaveSpace = 9;
+            } else if (flag_forLeaveSpace == 9) {
+                drawLandmarks(canvasCtx, landmarks, { color: '#292929', lineWidth: 0.5, radius: 1 });
+                flag_forLeaveSpace = 10;
+            } else if (flag_forLeaveSpace == 10) {
+                drawLandmarks(canvasCtx, landmarks, { color: '#383838', lineWidth: 1, radius: 1 });
+                flag_forLeaveSpace = 11;
+            } else if (flag_forLeaveSpace == 11) {
+                drawLandmarks(canvasCtx, landmarks, { color: '#383838', lineWidth: 1, radius: 1 });
+                flag_forLeaveSpace = 12;
+            } else if (flag_forLeaveSpace == 12) {
+                drawLandmarks(canvasCtx, landmarks, { color: '#ababab', lineWidth: 0.5, radius: 1 });
+                flag_forLeaveSpace = 13;
+            } else if (flag_forLeaveSpace == 13) {
+                drawLandmarks(canvasCtx, landmarks, { color: '#ababab', lineWidth: 0.5, radius: 1 });
+                flag_forLeaveSpace = 14;
+            } else if (flag_forLeaveSpace == 14) {
+                drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS, { color: '#2e2e2e', lineWidth: 1 });
+                drawLandmarks(canvasCtx, landmarks, { color: '#2e2e2e', lineWidth: 0.5, radius: 0.5 });
+                flag_forLeaveSpace = 15;
+            } else if (flag_forLeaveSpace == 15) {
+                drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS, { color: '#2e2e2e', lineWidth: 1 });
+                drawLandmarks(canvasCtx, landmarks, { color: '#2e2e2e', lineWidth: 0.5, radius: 0.5 });
                 flag_forLeaveSpace = 0;
             }
 
